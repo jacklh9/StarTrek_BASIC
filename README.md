@@ -5,6 +5,10 @@ GW-BASIC ASCII Star Trek game based on code from Creative Computing
 
 ![DS9](./ds9.png)
 
+![Bridge](./StarTrek_BASIC_bridge.gif)
+
+![Score Board](./StarTrek_BASIC_scoreboard.gif)
+
 ## Background
 When I was 15 in 1993 through 1995 I took a Star Trek BASIC game in an old programming book I found at a thrift store and wrote an etch-a-sketch program to add graphics and an ASCII GUI front-end. I plan to port this to JavaScript for fun later when I have some free time (and have read up on a few more JS and graphics programming books).
 
