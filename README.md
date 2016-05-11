@@ -1,6 +1,10 @@
 # StarTrek_BASIC
 GW-BASIC ASCII Star Trek game based on code from Creative Computing
 
+## Gameplay Images
+![DOS Box](./dosbox_screenshot.png)
+
+![DS9](./ds9.png)
 
 ## Background
 When I was 15 in 1993 through 1995 I took a Star Trek BASIC game in an old programming book I found at a thrift store and wrote an etch-a-sketch program to add graphics and an ASCII GUI front-end. I plan to port this to JavaScript for fun later when I have some free time (and have read up on a few more JS and graphics programming books).
@@ -33,12 +37,6 @@ startrek.bat
 7. NOTE: The numbered keys at the bottom of the screen correspond to your keyboard's F1 - F12 function keys. Some laptops require the use of a "Fn" key in conjunction with the numbered keys on the keyboard. YMMV.
 
 8. Have fun.
-
-
-## Gameplay Images
-![DOS Box](./dosbox_screenshot.png)
-
-![DS9](./ds9.png)
 
 
 
