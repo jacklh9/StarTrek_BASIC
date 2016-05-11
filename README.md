@@ -19,31 +19,33 @@ NOTE: I taught myself to program on this game (very poorly). The code is spaghet
 * [Game Credits and Screenshots](https://www.youtube.com/watch?v=MVHS624f544) (2:49)
 
 ## Install
-1. Install DOS Box to your computer.
-* [DOS Box](http://www.dosbox.com/)
+* Install DOS Box to your computer. 
+[DOS Box](http://www.dosbox.com/)
 
-2. Copy the Star Trek program to a folder on your computer (e.g. C:\DOS\st_basic)
+* Copy the Star Trek program to a folder on your computer (e.g. C:\DOS\st_basic)
 
-3. Launch DOS Box. (Note: press ALT+ENTER to toggle between full-screen mode or windowed mode on a PC.)
+* Launch DOS Box. (Note: press ALT+ENTER to toggle between full-screen mode or windowed mode on a PC.)
 
-4. Run mount command to mount your DOS folder:
+* Run mount command to mount your DOS folder:
+```
 Z:\> mount c c:\dos
+```
 
-5. Change directory to star trek game:
+* Change directory to star trek game:
 ```
 c:
 dir
 cd st_basic
 ```
 
-6. Launch the game:
+* Launch the game:
 ```
 startrek.bat
 ```
 
-7. NOTE: The numbered keys at the bottom of the screen correspond to your keyboard's F1 - F12 function keys. Some laptops require the use of a "Fn" key in conjunction with the numbered keys on the keyboard. YMMV.
+* NOTE: The numbered keys at the bottom of the screen correspond to your keyboard's F1 - F12 function keys. Some laptops require the use of a "Fn" key in conjunction with the numbered keys on the keyboard. YMMV.
 
-8. Have fun.
+* When done, type F10 to end the game and "exit" at the DOS prompt. Live long and prosper!
 
 
 
