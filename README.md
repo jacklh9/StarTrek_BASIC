@@ -1,7 +1,7 @@
 # StarTrek_BASIC
 GW-BASIC ASCII Star Trek game based on code from Creative Computing
 
-![Bridge](./StarTrek_BASIC_bridge.gif)
+![Bridge](./StarTrek_BASIC_romulan_DS9.gif)
 
 ![Score Board](./StarTrek_BASIC_scoreboard.gif)
 
