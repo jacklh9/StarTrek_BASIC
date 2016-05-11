@@ -43,9 +43,11 @@ cd st_basic
 startrek.bat
 ```
 
-* NOTE: The numbered keys at the bottom of the screen correspond to your keyboard's F1 - F12 function keys. Some laptops require the use of a "Fn" key in conjunction with the numbered keys on the keyboard. YMMV.
+* NOTE: The numbered keys at the bottom of the screen correspond to your keyboard's F1 - F10 function keys. Some laptops require the use of a "Fn" key in conjunction with the numbered keys on the keyboard. YMMV.
 
-* When done, type F10 to end the game and "exit" at the DOS prompt. Live long and prosper!
+* When done, press F10 to end the game and type "exit" at the DOS prompt to quick DOS Box. 
+
+* Live long and prosper!
 
 
 
