@@ -17,7 +17,7 @@ BASIC ".BAS" files.
 
 ## Viewing the Extended ASCII text files
 
-- Install Notepad++ which supports encodings that can read Extended ASCII characters.
+- Install [Notepad++](https://notepad-plus-plus.org/) which supports encodings that can read Extended ASCII characters.
 - Open the text file with Notepad++.
 - Change your encoding:
 Encoding | Character sets | Western European | OEM-US
