@@ -53,3 +53,5 @@ startrek.bat
 * Live long and prosper!
 
 
+## Source Code
+You can view the original source material and my derivative source work [here](https://github.com/jacklh9/StarTrek_BASIC/tree/master/source)
