@@ -6,6 +6,12 @@ Edition](https://archive.org/details/basic-computer-games-microcomputer-edition_
 
  - Direct link to starting page of [Super Star Trek](https://archive.org/details/basic-computer-games-microcomputer-edition_202207/page/157/mode/2up)
 
+ - [PDF Text
+    version](https://dn720001.ca.archive.org/0/items/basic-computer-games-microcomputer-edition_202207/Basic_Computer_Games_Microcomputer_Edition_text.pdf)
+    where you can copy/paste original source
+    - Warning: VERY slow download!
+
+---
 My modified game source code in this directory is an export from the
 BASIC ".BAS" files.
 
