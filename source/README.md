@@ -38,37 +38,58 @@ Encoding | Character sets | Western European | OEM-US
 If you want to export the source code directly from the BAS files:
 
 - Clone the Star Trek repo:
-```git clone <star-trek-repo-url>```
+```
+git clone <star-trek-repo-url>
+```
 
 - Copy/move the st_basic folder to, for example, c:\st_basic:
-```move st_basic c:\```
+```
+move st_basic c:\
+```
 
 - Launch DOSBox.
 
 - Mount your DOSBox 'c' drive:
-```mount c c:\st_basic```
+```
+mount c c:\st_basic
+```
 
 - Change to the mounted 'c' drive:
-```c:```
+```
+c:
+```
 
 - Launch GWBASIC:
-```gwbasic.exe```
+```
+gwbasic.exe
+```
 
 - In GWBASIC, load a BAS file:
-```load "startrek.bas"
+```
+load "startrek.bas"
+```
 
 - (Optional) Feel free to list the content:
-```list```
+```
+list
+```
 
 - Save in ASCII format using an 8.3 filename format:
-```save "startrek.txt",a```
+```
+save "startrek.txt",a
+```
 
 - Repeat the load and save steps for as many BAS files as your heart desires.
 
 - When all done, exit GWBASIC back to DOSBox:
-```system```
+```
+system
+```
 
 - Exit DOSBox:
-```exit```
+```
+exit
+```
 
 NOTE: Really, these notes were for my recollection of how I exported these.
+
