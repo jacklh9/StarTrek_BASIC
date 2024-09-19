@@ -10,7 +10,7 @@ GW-BASIC ASCII Star Trek game based on code from Creative Computing
 ![DS9](./ds9.png)
 
 ## Background
-When I was 15 in 1993 through 1995 I took a Star Trek BASIC game in an old programming book I found at a thrift store and wrote an etch-a-sketch program to add graphics and an ASCII GUI front-end. I plan to port this to JavaScript for fun later when I have some free time (and have read up on a few more JS and graphics programming books).
+When I was 15 in 1993 through 1995 I took a Star Trek BASIC game in an [old programming book (Basic Computer Games Microcomputer Edition by David H. Ahl)](https://archive.org/details/basic-computer-games-microcomputer-edition_202207) that I found at a thrift store and wrote an etch-a-sketch program to add graphics and an ASCII GUI front-end. I plan to port this to JavaScript for fun later when I have some free time (and have read up on a few more JS and graphics programming books).
 
 NOTE: I taught myself to program on this game (very poorly). The code is spaghetti-code. (Hey, it's BASIC! Whaddaya expect! ;-) Also, I am not the original author of the original concept. See videos below for explanation. However, the graphics and heavy modifications are all my own. All Star Trek characters, etcetera, are trademarks of their respective owner(s) (i.e., CBS, Paramount), etcetera. (Please don't sue me!)
 
@@ -51,4 +51,5 @@ startrek.bat
 * When done, press F10 to end the game and type "exit" at the DOS prompt to quit DOS Box. 
 
 * Live long and prosper!
+
 

@@ -1,0 +1,380 @@
+10 '003.BAS/INSTRUCT.DAT -- LAST MODIFIED: 10-28-95
+20 ON ERROR GOTO 3660
+30 KEY 15,CHR$(4)+CHR$(70):ON KEY(15)GOSUB 2920:KEY(15)ON
+40 KEY OFF:IF LEN(Z$)<>25 THEN RUN"002"
+50      IF HP=8  THEN IF ST=T0 AND HP(1)=1 THEN 2550
+60 FOR LP=1 TO 10:KEY LP,"ББББББ":KEY(LP)OFF:NEXT LP
+70 KEY 1,"EXIT":KEY 9,"REPLAY":GOSUB 220
+80 ON KEY(1)GOSUB 120:ON KEY(9)GOSUB 150
+90 KEY(1)ON:KEY(9)ON:KEY ON
+100 IF HP<8 THEN ON HP GOSUB 260,540,730,830,920,1280,1500
+110 IF HP>7 THEN ON HP-7 GOTO 1900,2140,2940
+120 '--- FN (1)
+130 KEY(1)OFF:KEY(9)OFF:KEY OFF:LOCATE 14,3:PRINT SPACE$(26)
+140 GOSUB 3670:LOCATE 15,35:PRINT"LIBRARY COMPUTER PANEL":LOCATE 20,49:PRINT"RETURNING TO MAIN":LOCATE 21,49:PRINT"COMMAND PANEL":CHAIN "001",,ALL
+150 '--- FN (9)
+160 GOSUB 220:GOTO 90:RETURN
+170 REM ****************** CLS SUB-ROUTINES ********************************
+180 ANY$=INKEY$:IF ANY$<>"" THEN 180
+190 ANY$=INKEY$:IF ANY$=CHR$(13) OR ANY$=" " THEN 200 ELSE 190
+200 GOSUB 220
+210 SOUND 1000,1:LOCATE 1:TD=0:RETURN
+220 REM ------------------ CLS ONLY ----------------
+230 LINE (232,104)-(631,183),0,BF:LINE (276,74)-(355,76),0,BF
+240 RETURN
+250 'HELP *********************
+260 LOCATE 14,30:PRINT"(_КлллPLOTTING_A_COURSEлллллллллллллллллллллллК_)"
+270 LOCATE 15,30:PRINT" Course is in a circular numerical vector arrang-"
+280 LOCATE 16,30:PRINT" ment as shown in figure n.1 . You are at center."
+290 LOCATE 17,30:PRINT"    4  3  2   On your map you may see a grid such"
+300 LOCATE 18,30:PRINT"     \ Г /    as in fig n.2 ...-->   5УФФХФФХФФХ"
+310 LOCATE 19,30:PRINT"  5ФФ =-@ ФФ1    To move to (2,7)    6УФ=-@ФХФФХ"
+320 LOCATE 20,30:PRINT"     / Г \    set a course of eight  7УФФХФФХФФХ"
+330 LOCATE 21,30:PRINT"    6  7  8   which is like saying:  8РФФСФФСФФС"
+340 LOCATE 22,30:PRINT"(fig n.1)     ``Move me diagonally       1  2..."
+350 LOCATE 23,30:PRINT"                right & down!''      (Fig n.2) "
+360 GOSUB 170:LP=0:TM=TIMER
+370 LOCATE 14,30:PRINT"(_КлллPLOTTING_A_COURSEлллллллллллллллллллллллК_)"
+380 LOCATE 15,30:PRINT" Distance is the length between two coordinates. "
+390 LOCATE 16,30:PRINT" To get from (1,4) to (5,8) you would plot a     "
+400 LOCATE 17,30:PRINT" course of 8 & set a distance of 4 because       "
+410 LOCATE 18,30:PRINT" 4УФ=-@ФХФФХФФХФФХФФХФФХФФД it's the distance    "
+420 LOCATE 19,30:PRINT" 5УФФХФФХФФХФФХФФХФФХФФХФФД from the initial     "
+430 LOCATE 20,30:PRINT" 6УФФХФФХФФХФФХФФХФФХФФХФФД position at (1,4) to "
+440 LOCATE 21,30:PRINT" 7УФФХФФХФФХФФХФФХФФХФФХФФД the final position   "
+450 LOCATE 22,30:PRINT" 8РФФСФФСФФСФФСФnewФСФФСФФй at sector (5,8).     "
+460 LOCATE 23,30:PRINT"     1  2  3  4  5  6  7  8                      "
+470 ANY$=INKEY$:IF ANY$=CHR$(13) OR ANY$=" " OR TM+20<TIMER THEN ELSE 470
+480 LP=LP+1:IF LP>4 THEN RETURN
+490 ON LP GOSUB 500,510,520,530:TM=TIMER:GOTO 470
+500 LOCATE 18,34:PRINT"ФХФ":LOCATE 19,37:PRINT"=-@":RETURN
+510 LOCATE 19,37:PRINT"ФХФ":LOCATE 20,40:PRINT"=-@":RETURN
+520 LOCATE 20,40:PRINT"ФХФ":LOCATE 21,43:PRINT"=-@":RETURN
+530 LOCATE 21,43:PRINT"ФХФ":LOCATE 22,46:PRINT"=-@":RETURN
+540 LOCATE 14,30:PRINT"(_КллORIGIN_OF_QUADRANT_NOMENCLATUREллллллллллК_)"
+550 LOCATE 16,30:PRINT"   Most of the intelligent civilizations in the "
+560 LOCATE 17,30:PRINT" Milky Way originated galactic designations well"
+570 LOCATE 18,30:PRINT" before the Third Magellanic Conference that "
+580 LOCATE 19,30:PRINT" reached the `2 to the 6th Agreement'. There it "
+590 LOCATE 20,30:PRINT" was agreed that in all two-dimensional repre-  "
+600 LOCATE 21,30:PRINT" sentations of the galaxy, 64 major sub-divisions"
+610 LOCATE 22,30:PRINT" would be specified in a 8 x 8 matrix, further  "
+620 LOCATE 23,30:PRINT" divided into 16 regions with 4 quadrants ...   "
+630 GOSUB 170
+640 LOCATE 14,30:PRINT"(_КллORIGIN_OF_QUADRANT_NOMENCLATUREлллллллллК_)"
+650 LOCATE 15,30:PRINT" designated by `Roman Numerals.' To this day,   "
+660 LOCATE 16,30:PRINT" the official logs of starships originating on  "
+670 LOCATE 17,30:PRINT" near-Earth starbases still refer to the major  "
+680 LOCATE 18,30:PRINT" galactic areas as `quadrants.'                 "
+690 LOCATE 19,30:PRINT"   Now, most standard Cartesian Galactic maps   "
+700 LOCATE 20,30:PRINT" still use the quadrant nomenclature established"
+710 LOCATE 21,30:PRINT" in the historical `2^6 Agreement' document.    "
+720 GOSUB 170:RETURN
+730 LOCATE 14,30:PRINT"(_КлллLong_Range_Sensor_ScansллллллллллллллллК_)"
+740 LOCATE 15,30:PRINT SPACE$(50):LOCATE 23,30:PRINT SPACE$(50)
+750 LOCATE 16,30:PRINT"  Senses for specific objects present in the    "
+760 LOCATE 17,30:PRINT"quadrants adjacent to the Enterprise (which is  "
+770 LOCATE 18,30:PRINT"represented in the middle of the scan). The scan"
+780 LOCATE 19,30:PRINT"is read  {###}.  216=кП  # Translation  Г Symbol"
+790 LOCATE 20,30:PRINT"vesselsУФФйГРФФФФП   ГГ  2 enemy starships   *-]"
+800 LOCATE 21,30:PRINT" starbasesУй     Г   ГГ  1 starbase present  <+>"
+810 LOCATE 22,30:PRINT"celestial bodiesУй   Рй  6 celestial bodies *  34
+820 GOSUB 170:RETURN
+830 LOCATE 14,30:PRINT"(_КлллGalactic_RecordллллллллллллллллллллллллК_)"
+840 LOCATE 16,30:PRINT"This option displays the records made of each   "
+850 LOCATE 17,30:PRINT"quadrant after sensor scans. It only records    "
+860 LOCATE 18,30:PRINT"scans picked up by the long range sensors when  "
+870 LOCATE 19,30:PRINT"used. Therefore, it is helpful to take readings "
+880 LOCATE 20,30:PRINT"upon entering new quadrants after warp travel.  "
+890 LOCATE 21,30:PRINT"   Readouts of the Galactic Record are interpre-"
+900 LOCATE 22,30:PRINT"ted in the same manner as the sensor scans.     "
+910 GOSUB 170:RETURN
+920 LOCATE 14,30:PRINT"(_КллPHOTON_TORPEDOESллллллллллллллллллллллллК_)"
+930 LOCATE 16,30:PRINT"   Photon Torpedoes can be fired individually in"
+940 LOCATE 17,30:PRINT"a specified direction & at a target along its"
+950 LOCATE 18,30:PRINT"path. The torpedo detonates upon impact or self-"
+960 LOCATE 19,30:PRINT"destructs upon leaving the quadrant.    "
+970 LOCATE 20,30:PRINT"   Photons are favorable because, unlike pha-"
+980 LOCATE 21,30:PRINT"sers, photons' explosive charge remains const-"
+990 LOCATE 22,30:PRINT"ant even over long distances;however, they are"
+1000 LOCATE 23,30:PRINT"capable of linear travel, only."
+1010 GOSUB 170:GOTO 1180
+1020 LOCATE 14,30:PRINT"(_КллPHOTON_TORPEDO_TARGETTING_via_COMPUTERллК_)"
+1030 LOCATE 16,30:PRINT"   To find a course for the target, view the"
+1040 LOCATE 17,30:PRINT"Short Range Scanner grid (left). Find the enemy"
+1050 LOCATE 18,30:PRINT"and your own coordinates by accessing the Course"
+1060 LOCATE 19,30:PRINT"Generating Computer, or C.G.C.  It will display"
+1070 LOCATE 20,30:PRINT"enemy coordinates in the quadrant and determine"
+1080 LOCATE 21,30:PRINT"the initial course to set, but only to the"
+1090 LOCATE 22,30:PRINT"tenths place. Although very rare, it may be"
+1100 LOCATE 23,30:PRINT"necessary to make minor adjustments."
+1110 GOSUB 170
+1120 LOCATE 14,30:PRINT"(_КллPHOTON_TORPEDO_TARGETTING_лл_LIMITS_ллллК_)"
+1130 LOCATE 16,30:PRINT"   It is important to note that photons cannot"
+1140 LOCATE 17,30:PRINT"penetrate through planets & stars;thus, celest-"
+1150 LOCATE 18,30:PRINT"ial bodies serve the ship as the best defense"
+1160 LOCATE 19,30:PRINT"against enemy photon torpedoes during combat."
+1170 GOSUB 170:RETURN
+1180 LOCATE 14,30:PRINT"(_КллPHOTON_TARGETTING_&_SETTINGлллллллллллллК_)"
+1190 LOCATE 16,30:PRINT"   Course is determined in same way as in navi- "
+1200 LOCATE 17,30:PRINT"gating using the circular numerical vector arra-"
+1210 LOCATE 18,30:PRINT"ngement respective to the ship's position. Enter"
+1220 LOCATE 19,30:PRINT"course at prompt up to one decimal place to the "
+1230 LOCATE 20,30:PRINT"right. Respond with any key to launch  or cancel"
+1240 LOCATE 21,30:PRINT"using the `CANCEL' command (F-1). "
+1250 LOCATE 22,30:PRINT"   There is an option for using the computer to "
+1260 LOCATE 23,30:PRINT"compute a torpedo trajectory using the C.G.C.   "
+1270 GOSUB 170:GOTO 1020 '------
+1280 LOCATE 14,30:PRINT"(_КллPHASERSллллллллллллллллллллллллллллллллллК_)"
+1290 LOCATE 15,30:PRINT"  The advantage to phasers over photon torpedoes"
+1300 LOCATE 16,30:PRINT"is that phasers targets all enemy ships and, if"
+1310 LOCATE 17,30:PRINT"given enough energy, will damage shields to all"
+1320 LOCATE 18,30:PRINT"targets. The trade-off is, phasers consume vast"
+1330 LOCATE 19,30:PRINT"amounts of energy to power & provide sufficient"
+1340 LOCATE 20,30:PRINT"damage, which varies according to the number of"
+1350 LOCATE 21,30:PRINT"enemy ships present and their distance from the"
+1360 LOCATE 22,30:PRINT"Enterprise. Be aware, if the enemy is fired upon"
+1370 LOCATE 23,30:PRINT"& not destroyed, they most likely WILL retaliate."
+1380 GOSUB 170
+1390 LOCATE 14,30:PRINT"(_КллPHASER_CONTROLлллллллллллллллллллллллллллК_)"
+1400 LOCATE 15,30:PRINT"  When in the tactical mode, select PHASERS on"
+1410 LOCATE 16,30:PRINT"the display. If phasers are not damaged, it will"
+1420 LOCATE 17,30:PRINT"read `ARMED'. Use the left & right arrow keys to"
+1430 LOCATE 18,30:PRINT"power the phasers via reserve power. If no power"
+1440 LOCATE 19,30:PRINT"is present in reserves, phasers will not operate."
+1450 LOCATE 20,30:PRINT"Goto SHIELD control to correct this problem or "
+1460 LOCATE 21,30:PRINT"divert energy from a system via ENGINEERING's "
+1470 LOCATE 22,30:PRINT"Damage Control.  *** NOTE: Be sure to leave some"
+1480 LOCATE 23,30:PRINT"reserve power for other system operations. ---- "
+1490 GOSUB 170:RETURN
+1500 LOCATE 14,30:PRINT"(_КллFUNCTIONллллллллллллллллллллллллллллллллллК_)"
+1510 LOCATE 16,30:PRINT"   Damage control gives a report of the status of"
+1520 LOCATE 17,30:PRINT"certain Enterprise systems. A positive or negative"
+1530 LOCATE 18,30:PRINT"(+/-) sign designates if the system is or isn't"
+1540 LOCATE 19,30:PRINT"operational, respectively. Do not misinterpret"
+1550 LOCATE 20,30:PRINT"the reading, however. A (-) sign next to SHIELDS,"
+1560 LOCATE 21,30:PRINT"for example, doesn't mean the ship's shields won't"
+1570 LOCATE 22,30:PRINT"protect it;rather, shield CONTROL is inoperative."
+1580 LOCATE 23,30:PRINT"The same applies for WARP and DAMAGE CONTROL."
+1590 GOSUB 170
+1600 LOCATE 14,30:PRINT"(_КллPOWER_BOOSTлллллллллллллллллллллллллллллллК_)"
+1610 LOCATE 15,30:PRINT"  Should a system malfunction it may be desireable"
+1620 LOCATE 16,30:PRINT"to repair it immediately. This is possible by DI-"
+1630 LOCATE 17,30:PRINT"VERTing energy to the appropriate system via Eng-"
+1640 LOCATE 18,30:PRINT"ineering's Damage Control System. Each boost will"
+1650 LOCATE 19,30:PRINT"consume";BOOST;"units & it may take multiple BOOSTs"
+1660 LOCATE 20,30:PRINT"to restore operation. Boosting is NOT possible if"
+1670 LOCATE 21,30:PRINT"the damage control system is inoperative. Also, be"
+1680 LOCATE 22,30:PRINT"aware, other alternatives exist to repairing:    "
+1690 LOCATE 23,30:PRINT"starbase technicians or time(ship's Damage Cntrl)."
+1700 GOSUB 170
+1710 LOCATE 14,30:PRINT"(_КллDIVERTING_POWERлллллллллллллллллллллллллллК_)"
+1720 LOCATE 15,30:PRINT"  It is possible to sacrifice a system for extra  "
+1730 LOCATE 16,30:PRINT"energy. The trade off is, that system MAY become"
+1740 LOCATE 17,30:PRINT"inoperable. Each system diverts at least";BOOST/2
+1750 LOCATE 18,30:PRINT"units of energy to reserves, and only systems that"
+1760 LOCATE 19,30:PRINT"are currently functioning can be used. "
+1770 LOCATE 20,30:PRINT"  Make note that the ship's main power grid can"
+1780 LOCATE 21,30:PRINT"hold a maximum of";E0;"units and CANNOT exceed "
+1790 LOCATE 22,30:PRINT"this limit. Any attempt to overcome the limitation"
+1800 LOCATE 23,30:PRINT"would be futile. *M.POWER GRID = SHIELDS + RESERVE"
+1810 GOSUB 170
+1820 RETURN
+1830 '************ STATUS AND ORDERS ***************
+1840 GOSUB 230:LOCATE 14,30:PRINT " _ "+STRING$(44,95)+" _ "
+1850 LOCATE 15,30:PRINT "(_КллллллллллллSTARFLEETллCOMMANDллллллллллллллК_)"
+1860 FOR LP=16 TO 23:LOCATE LP,30:PRINT STRING$(50,176):NEXT LP
+1870 PUT (232,104),CM,OR
+1880 LOCATE 23,41:PRINT " -ЭЭЭЭ-  END MESSAGE  -ЭЭЭЭ- "
+1890 KEY OFF:KEY(1)OFF:KEY(9)OFF:CHAIN"001",,ALL
+1900 KEY(1)ON:KEY(9)ON
+1910 LOCATE 14,30:PRINT "(_КлS.F._BRIEFING:_CLASSIFIEDлл*SENIOR_STAFF*ллК_)"
+1920 LOCATE 15,30:PRINT "          cc:Capt./Enterprise NCC-1701 (D)"
+1930 LOCATE 16,30:PRINT "  After a failed attempt at interstellar peace "
+1940 LOCATE 17,30:PRINT "with the Romulans, on stardate 48020, the Romulan"
+1950 LOCATE 18,30:PRINT "empire committed an act of aggression against the"
+1960 LOCATE 19,30:PRINT "Federation when the U.S.S. Yamato was attacked "
+1970 LOCATE 20,30:PRINT "while defending an outpost near the Neutral Zone "
+1980 LOCATE 21,30:PRINT "by three Romulan Warbirds. Since then, sensors "
+1990 LOCATE 22,30:PRINT "have revealed a massive encroachment of Romulan"
+2000 LOCATE 23,30:PRINT "vessels into Federation space."
+2010 GOSUB 170
+2020 LOCATE 14,30:PRINT "(_КллSUB-SPACE_MESSAGE:ллMISSION_ORDERSллллллллК_)"
+2030 LOCATE 15,30:PRINT "   We estimate the Romulans will reach Starfleet"
+2040 LOCATE 16,30:PRINT "headquarters on stardate";DL;". Your orders "
+2050 LOCATE 17,30:PRINT "are to destroy all Romulan vessels in your region"
+2060 LOCATE 18,30:PRINT "of space before then. We cannot send you any"
+2070 LOCATE 19,30:PRINT "help. Half the fleet has already been deployed"
+2080 LOCATE 20,30:PRINT "on similiar missions. It is vital they all,includ-"
+2090 LOCATE 21,30:PRINT "ing the Enterprise, succeed in intercepting and "
+2100 LOCATE 22,30:PRINT "stopping the attack. "
+2110 LOCATE 23,30:PRINT "                 --- Starfleet Command; SD:";
+2120 PRINT USING "#####.#";T0-.5
+2130 GOSUB 170:GOTO 1830
+2140 '****************** MISSION STATUS ************
+2150 '
+2160 LP=2:IF K7-K9>1 THEN X$="s" ELSE X$=""
+2170 IF K7-K9>0 THEN LP=0:LOCATE 14,30:PRINT"LT.WORF: We have destroyed ";K7-K9;" enemy" ELSE 2190
+2180 LOCATE 15,30:PRINT"ship";X$;" during our mission."
+2190 LOCATE 16-LP,30:IF B9>1 THEN X$="s" ELSE X$=""
+2200 PRINT D$;:IF B9>0 THEN PRINT "Starbase";X$;" reporting";K9;:IF K9>1 THEN X$="s":GOTO 2220 ELSE X$="":GOTO 2220
+2210 PRINT"No starbases in range.":GOTO 2230
+2220 PRINT"Romulan":LOCATE 17-LP,30:PRINT"warbird";X$;" in this part of the galaxy."
+2230 LOCATE 18-LP,30:PRINT R$;"We have ";USING "###.#";DL-ST;:PRINT" stardates left":LOCATE 19-LP,30:PRINT"to complete our mission."
+2240 LOCATE 20-LP,30:PRINT L$;"Captain, Starfleet regulations "
+2250 LOCATE 21-LP,30:PRINT"allow us to exceed the maximum safe-warp limit "
+2260 LOCATE 22-LP,30:PRINT"of five, under the circumstances. To save time, we"
+2270 LOCATE 23-LP,30:PRINT"should use low speeds ONLY if we're low on energy."
+2280 GOSUB 170:GOTO 1890
+2290 '-----
+2300 DIM MISSION$(21):DIM UFP(200)
+2310 MISSION$(1)="I'm Admiral Hamilton of Starfleet Command."
+2320 MISSION$(2)="You are to abort all activities for a new"
+2330 MISSION$(3)="mission. I want to start off by emphasizing"
+2340 MISSION$(4)="the dire situation at hand. For now this   "
+2350 MISSION$(5)="information I'm about to reveal is limited "
+2360 MISSION$(6)="to the senior staff only until it is made  "
+2370 MISSION$(7)="public. Getting straight to the point,...  "
+2380 MISSION$(8)="as of stardate 48020, we have been at war  "
+2390 MISSION$(9)="with the Romulans. Half the fleet are away "
+2400 MISSION$(10)="on missions to intercept the Romulan threat"
+2410 MISSION$(11)="and the rest are standing by. We are fight-"
+2420 MISSION$(12)="ing a defensive war. Your mission is to    "
+2430 MISSION$(13)="search your assigned perimeter of space for"
+2440 MISSION$(14)="all Romulan vessels and destroy them before"
+2450 MISSION$(15)="stardate"+STR$(DL)+" after which, it is "
+2460 MISSION$(16)="estimated, they will have deployed enough  "
+2470 MISSION$(17)="warbirds to overpower Starfleet and capture"
+2480 MISSION$(18)="Federation headquarters. It is vital you   "
+2490 MISSION$(19)="succeed. Refer to your computer files for  "
+2500 MISSION$(20)="a more detailed briefing of the situation  "
+2510 MISSION$(21)="and your new orders.    -- STARFLEET OUT --"
+2520 KEY OFF:FOR LP=1 TO 10:KEY LP,"ББББББ":KEY(LP)OFF:NEXT LP
+2530 KEY 1,"CLOSE":ON KEY(1)GOSUB 2770
+2540 KEY 9,"REPLAY":ON KEY(9)GOSUB 2800:RETURN
+2550    KEY OFF:FOR LP=1 TO 10:KEY(LP)OFF:KEY LP,"ББББББ":NEXT LP
+2560 KEY 1,"_OPEN_":KEY 10,"IGNORE":ON KEY(1)GOSUB 2590:ON KEY(10)GOSUB 2820:KEY(1)ON:KEY(10)ON
+2570 GOSUB 220:LOCATE 14,30:PRINT"LT.CMDR.DATA: Incoming visual message, Captain.":LOCATE 15,30:PRINT"It is a priority-one sub-space message from":LOCATE  16,30:PRINT"Starfleet Command. ":KEY ON:TM1=TIMER+60
+2580 X$="1":GOSUB 2850:X$="":IF TIMER<=TM1 THEN 2580 ELSE GOSUB 2590
+2590 LOCATE 18,30:PRINT"PUT IT ON MAIN VIEWER...":KEY OFF:GOSUB 2300
+2600 LOCATE 20,30:PRINT"LT.CMDR.DATA: Aye, Sir.":TD=3:GOSUB 170
+2610 LINE (85,8)-(536,70),0,BF:DEF SEG=&HB800
+2620 BLOAD"00A.GX1",0:BLOAD"00A.GX2",8192:SOUND 1000,1
+2630 GOSUB 3680:LOCATE 20,49:PRINT"PRESS [";CHR$(24);"] TO REPEAT":LOCATE 21,49:PRINT"LAST SENTENCE."
+2640 GET (400,8)-(528,51),UFP
+2650    KEY(1)ON:KEY(9)ON:KEY ON        '---- FN KEYS
+2660 FOR LP=1 TO 21
+2670    LOCATE 8,13:PRINT SPACE$(44)
+2680 LINE (276,74)-(355,76),0,BF
+2690            FOR LP1=1 TO 44
+2700                    LOCATE 8,12+LP1:PRINT MID$(MISSION$(LP),LP1,1)
+2710                    LOCATE 8,60:IF LP<21 THEN PRINT CHR$(25) ELSE PRINT" "
+2720            NEXT LP1
+2730    SOUND 1000,1:TM1=TIMER+2.5:IF LP<=1 THEN X$="1" ELSE X$=""
+2740 GOSUB 2850:IF ANY$="" AND TIMER<=TM1 THEN  2740
+2750 IF ANY$=CHR$(0)+"H" THEN IF LP>1 THEN LP=LP-1:GOTO 2670 ELSE IF LP<=1 THEN 2740
+2760 NEXT LP:KEY OFF
+2770 BEEP:LINE (88,8)-(536,70),0,BF:PUT (252,10),UFP,OR
+2780 LOCATE 8,25:PRINT"№№№№   END TRANSMISSION   №№№№"
+2790 FOR LP=1 TO 21:MISSION$(LP)="":NEXT LP:ERASE MISSION$,UFP:GOTO 1830
+2800 KEY(9)ON:GOTO 2650
+2810 RETURN
+2820 REM IGNORE MESSAGE
+2830 KEY OFF:FOR LP=1 TO 10:KEY(LP)OFF:KEY LP,"":NEXT LP:LINE (276,74)-(355,76),0,BF
+2840 LOCATE 18,30:PRINT"I'LL VIEW IT IN MY READY ROOM, MR. DATA.":LOCATE 19,30:PRINT"NUMBER ONE, YOU HAVE THE BRIDGE.":TD=3:GOSUB 170:CHAIN"001",,ALL:RETURN
+2850 REM ****** VIEW SCREEN L.E.D.s ********
+2860 FOR LP3=312 TO 277 STEP -5:FOR LP4=1 TO 0 STEP -1
+2870 ANY$=INKEY$:IF ANY$<>"" AND X$<>"1" THEN RETURN
+2880 CIRCLE (LP3,76),1,LP4:CIRCLE (639-LP3-8,76),1,LP4:TM=TIMER
+2890 IF TIMER<TM+.01 THEN 2890
+2900 TM=TIMER
+2910 NEXT LP4,LP3:RETURN
+2920 REM breaking
+2930 BEEP:KEY(15)ON:RETURN
+2940 'helpful tips on getting started
+2950 LOCATE 14,30:PRINT"(_КлллGetting_Started:_SuggestionsлллллллллллК_)"
+2960 LOCATE 16,30:PRINT"1. Raise SHIELDs 3/4 of entire power supply."
+2970 LOCATE 17,30:PRINT"2. Take a sensor SCAN of area. You're at center."
+2980 LOCATE 18,30:PRINT"3. Goto NAVIGation & look at galactic RECORD."
+2990 LOCATE 19,30:PRINT"4. Your mission is: Search & destroy the enemy."
+3000 LOCATE 20,30:PRINT"   Look at RECORD & figure enemy location rela-"
+3010 LOCATE 21,30:PRINT"   tive to your position. Using NAVIGation, take"
+3020 LOCATE 22,30:PRINT"   the ship to THAT quadrant. ** If no enemy is"
+3030 LOCATE 23,30:PRINT"   found, goto another unexplored quad & scan."
+3040 GOSUB 170
+3050 LOCATE 14,30:PRINT"(_КлллSuggestions__continuedлллллллллллллллллК_)"
+3060 LOCATE 15,30:PRINT"5. If enemy found, be sure shields are up first."
+3070 LOCATE 16,30:PRINT"6. Destroy enemy using PHASERs and/or PHOTONs."
+3080 LOCATE 17,30:PRINT"   These can be found in TACTICal."
+3090 LOCATE 18,30:PRINT"7. Once destroyed, repeat entire process until"
+3100 LOCATE 19,30:PRINT"   all vessels in your area are destroyed."
+3110 LOCATE 20,30:PRINT"** Repair, and refuel power & torpedoes at star-"
+3120 LOCATE 21,30:PRINT"bases."
+3130 GOSUB 170
+3140 LOCATE 14,30:PRINT"(_КлллHelpful_HintsллллллллллллллллллллллллллК_)"
+3150 LOCATE 16,30:PRINT"+ SCAN with your sensors first upon entering a"
+3160 LOCATE 17,30:PRINT"  a new or unfamiliar quadrant."
+3170 LOCATE 18,30:PRINT"+ When navigating, look at your RECORD to see"
+3180 LOCATE 19,30:PRINT"  where you've been & plan where you're going."
+3190 LOCATE 20,30:PRINT"+ Watch the current STARDATE & mission DEADLINE!"
+3200 LOCATE 21,30:PRINT"+ Don't just sit there! Romulans may arrive."
+3210 LOCATE 22,30:PRINT"+ QUESTIONS??? --- Use the HELP option ( ??? )."
+3220 LOCATE 23,30:PRINT"+ Something don't work? Fix it in ENGINEering."
+3230 GOSUB 170
+3240 LOCATE 14,30:PRINT"(_КллOperation_Functions_&_Option_CommandsллК_)"
+3250 LOCATE 16,30:PRINT"** Use the function keys FN(1) through FN(10)"
+3260 LOCATE 17,30:PRINT"   to access these functions."
+3270 LOCATE 18,30:PRINT"NAVIG  -- Navigation: ship steering control."
+3280 LOCATE 19,30:PRINT"SCANS  -- Long Range Sensor scanning of area."
+3290 LOCATE 20,30:PRINT"RECORD -- Galactic record of LRS scans (above)."
+3300 LOCATE 21,30:PRINT"CHART  -- Galactic chart/map of quadrant names."
+3310 LOCATE 22,30:PRINT"SHIELD -- Shield control"
+3320 LOCATE 23,30:PRINT"TACTIC -- Tactical: for use during combat."
+3330 GOSUB 170
+3340 LOCATE 14,30:PRINT"(_КлллFunctions_&_Options__continuedллллллллК_)"
+3350 LOCATE 15,30:PRINT"PHASER -- Phasers: Fire phaser arrays at enemy."
+3360 LOCATE 16,30:PRINT"PHOTON -- Photon torpedoes: For use in combat."
+3370 LOCATE 17,30:PRINT"C.G.C. -- Computer Generated Course:of photons."
+3380 LOCATE 18,30:PRINT"ENGINE -- Engineering: Systems status & repair."
+3390 LOCATE 19,30:PRINT"BOOST  -- Repair a damaged system (-)."
+3400 LOCATE 20,30:PRINT"DIVERT -- Divert energy from functioning system"
+3410 LOCATE 21,30:PRINT"          to reserves. System is left off-line."
+3420 LOCATE 22,30:PRINT" ???   -- Help option (instructions, etc.)"
+3430 LOCATE 23,30:PRINT"CANCEL/EXIT/RESET -- Exits menu or `do over.'"
+3440 GOSUB 170
+3450 LOCATE 14,30:PRINT"(_КлллFunctions_&_Options__continuedллллллллК_)"
+3460 LOCATE 15,30:PRINT"STATUS -- Mission status: Select this to check"
+3470 LOCATE 16,30:PRINT"          on your progress. Crew will report"
+3480 LOCATE 17,30:PRINT"          on # of enemies destroyed & left."
+3490 LOCATE 18,30:PRINT"          Also hints on # of starbases, and "
+3500 LOCATE 19,30:PRINT"          gives time left to complete mission."
+3510 LOCATE 20,30:PRINT"ORDERS -- Official Starfleet sub-space trans-"
+3520 LOCATE 21,30:PRINT"          mission recording of alert & orders."
+3530 GOSUB 170
+3540 LOCATE 14,30:PRINT"(_КлллSymbolsлллллллллллллллллллллллллллллллК_)"
+3550 LOCATE 15,30:PRINT"=-@     -- The Enterprise NCC - 1701 D"
+3560 LOCATE 16,30:PRINT"*-]     -- Enemy vessel"
+3570 LOCATE 17,30:PRINT"<+>     -- Starbase"
+3580 LOCATE 18,30:PRINT" "+CHR$(15)+"      -- Star   /  *    --   Planet"
+3590 LOCATE 19,30:PRINT"ФХФ     -- Short Range Sensor Grid Pattern"
+3600 LOCATE 20,30:PRINT"***     -- Federation Border (cannot go beyond)"
+3610 LOCATE 21,30:PRINT" ь      -- Federation Photon Torpedo"
+3620 LOCATE 22,30:PRINT" љ      -- Enemy Photon Torpedo"
+3630 LOCATE 23,30:PRINT"(_Клллллллллллллллл_END_ллллллллллллллллллллК_)"
+3640 GOSUB 170:GOTO 120
+3650 'ERROR
+3660 BEEP:RESUME NEXT
+3670 REM INFO PANEL
+3680 GOSUB 220
+3690 LOCATE 14,30:PRINT" _ ____________________________________________ _ "
+3700 LOCATE 15,30:PRINT"(_КББББББББББББББББББББББББББББББББББББББББББББК_)"
+3710 LOCATE 16,30:PRINT"кФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФП"
+3720 LOCATE 17,30:PRINT"ГААААААААААААААААААААААААААААААААААААААААААААААААГ"
+3730 LOCATE 18,30:PRINT"ГААААААААААААААААААААААААААААААААААААААААААААААААГ"
+3740 LOCATE 19,30:PRINT"ГААААААААААААААААкФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФй"
+3750 LOCATE 20,30:PRINT"ГААААААААААААААААГ                       кФФФФФФФП"
+3760 LOCATE 21,30:PRINT"ГААААААААААААААААГ                       ГлллллллГ"
+3770 LOCATE 22,30:PRINT"ГААААААААААААААААГ     кФФФФФФФФФФФФФФФФФйлллллллГ"
+3780 LOCATE 23,30:PRINT"ГААААААААААААААААГ     ГлллллллллллллллллллллллллГ"
+3790 PUT (103,115),CM,OR:RETURN
+

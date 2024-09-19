@@ -1,0 +1,62 @@
+10 '005.BAS/CREDITS -- LAST MODIFIED: 8-13-95
+20 ON ERROR GOTO 600
+30 KEY 15,CHR$(4)+CHR$(70):ON KEY(15) GOSUB 590:KEY(15)ON
+40 KEY OFF:CLS:DEF SEG=&HB800
+50 IF LP<>4802 THEN BEEP:CLEAR:CHAIN"004"
+60 BLOAD"00M.GFX",0
+70 DEFINT X,Y:DIM X(100),Y(100):GET (277,23)-(334,25),X:GET (277,31)-(334,33),Y
+80 PUT (277,23),Y,PSET:GOTO 170
+90 '----------------------
+100 IF TIMER<TM THEN 100
+110 FOR LP=1 TO 3:TM=TIMER+.5
+120   PUT (277,19+(LP*4)),X,PSET 'ENERGY
+130   IF LP=1 THEN PUT(277,31),Y,PSET ELSE PUT(277,17+INT(LP*3.4)),Y,PSET
+140 IF TIMER<TM THEN 140
+150 NEXT LP:PUT(277,31),Y,PSET
+160 TM=TIMER+1:RETURN
+170 '--------
+180 LT=LT+1:IF LT>5 THEN SET=3:CHAIN"004",,ALL '<-- DONE/NEXT
+190 FOR LP5=16 TO 22:LTR$(LP5-15)="":LOCATE LP5,3:PRINT STRING$(75,177):NEXT LP5
+200 ON LT GOSUB 260,310,390,450,530:LOCATE 15,76:PRINT USING"##";LT
+210 FOR LT1=16 TO 22:LOCATE LT1,3:PRINT LTR$(LT1-15):NEXT LT1
+220 GOSUB 100:ANY$=INKEY$
+230 IF ANY$="" THEN 220 ELSE PLAY "G64"
+240 IF ANY$=CHR$(0)+"H" AND LT>1 THEN LT=LT-1:GOTO 190
+250 IF ANY$=CHR$(0)+"P" OR ANY$=CHR$(13) OR ANY$=" " THEN 180 ELSE 220
+260 'one
+270 LTR$(3)="STAR TREK:TNG the game based on the series created by"
+280 LTR$(4)="the late Gene Roddenberry, `Star Trek' & `ST:The Next"
+290 LTR$(5)="Generation' of Paramount Pictures."
+300 RETURN
+310 'two
+320 LTR$(1)="Game programming based on the following:"
+330 LTR$(2)="*  Original program by Mike Mayfield."
+340 LTR$(3)="*  Modified version published in Dec. '74s `101 BASIC "
+350 LTR$(4)="   GAMES', by Dave AHL. Modifications & debugging by  "
+360 LTR$(5)="   Bob Leedom -- April & December 1974, with `a little"
+370 LTR$(6)="   help from his friends...'"
+380 LTR$(7)="Converted to Microsoft 8K BASIC  by John Borders":RETURN
+390 'three
+400 LTR$(1)="Copy of original program can be found in the publication:"
+410 LTR$(3)="   `BASIC COMPUTER GAMES: MICROSOFT EDITION' by   David  "
+420 LTR$(4)="   H. Ahl (Editor); Copyright 1978 by Creative Computing "
+430 LTR$(5)="   Workman Publishing -- New York,NY."
+440 LTR$(6)="Published version @ pg.157, entitled `Super Star Trek.'  ":RETURN
+450 'four
+460 LTR$(1)="This latest version of the game extensively modified by  "
+470 LTR$(2)="J. L. Hamilton of Southern, CA.               (x#_4802)  "
+480 LTR$(3)="This version completed Nov. 1995. All graphics & working "
+490 LTR$(4)="design also by J.L.H.  Original programming, concept,    "
+500 LTR$(5)="design, and rules by the aforementioned.                 "
+510 LTR$(7)=STRING$(50,177)+"------"+STRING$(2,177)
+520 RETURN
+530 'five
+540 LTR$(1)="   This game is public domain. Feel free to copy it and  "
+550 LTR$(2)="distribute it to anyone so long as all files are intact &"
+560 LTR$(3)="unchanged.  This game is FREE and NOT for sale.          "
+570 LTR$(4)=STRING$(57," "):LTR$(5)=LTR$(4):LTR$(6)=LTR$(5):LTR$(7)=LTR$(6)
+580 RETURN
+590 BEEP:KEY(15)ON:RETURN
+600 'ERROR
+610 BEEP:RESUME NEXT
+
