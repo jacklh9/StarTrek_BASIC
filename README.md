@@ -22,7 +22,7 @@ NOTE: I taught myself to program on this game (very poorly). The code is spaghet
 * Install the free DOS emulator to your computer. 
 [Click here for 'DOS Box' website and download](http://www.dosbox.com/)
 
-* Copy all the Star Trek BASIC files in 'st_basic' to a folder on your computer (e.g. C:\DOS\st_basic)
+* Copy all the Star Trek BASIC files in 'st_basic' to a folder on your computer (e.g. C:\DOS\st_basic).
 
 * Launch DOS Box. (Note: press ALT+ENTER to toggle between full-screen mode or windowed mode on a PC.)
 
