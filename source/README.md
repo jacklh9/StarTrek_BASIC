@@ -17,7 +17,9 @@ BASIC ".BAS" files.
 
 ## Viewing the Extended ASCII text files (VS Code)
 
-- Open VS Code.
+- [Download/install](https://code.visualstudio.com/) the free Microsoft VS Code editor.
+
+- Open text file in VS Code.
 
 - On the bottom-right corner of the status bar, you will see the encoding of the file (usually UTF-8).
 
@@ -29,7 +31,7 @@ BASIC ".BAS" files.
 
 ## Viewing the Extended ASCII text files (Notepad++)
 
-- Install [Notepad++](https://notepad-plus-plus.org/) which supports encodings that can read Extended ASCII characters.
+- Install the free [Notepad++](https://notepad-plus-plus.org/) editor which supports encodings that can read Extended ASCII characters.
 - Open the text file with Notepad++.
 - Change your encoding:
 Encoding | Character sets | Western European | OEM-US
