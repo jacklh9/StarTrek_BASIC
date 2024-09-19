@@ -15,7 +15,19 @@ Edition](https://archive.org/details/basic-computer-games-microcomputer-edition_
 My modified game source code in this directory is an export from the
 BASIC ".BAS" files.
 
-## Viewing the Extended ASCII text files
+## Viewing the Extended ASCII text files (VS Code)
+
+- Open VS Code.
+
+- On the bottom-right corner of the status bar, you will see the encoding of the file (usually UTF-8).
+
+- Click and select “Reopen with Encoding…”.
+
+- Scroll to the very bottom and select "Western European DOS (CP 850)".
+
+<img src="./VS_Code_Encoding.png" />
+
+## Viewing the Extended ASCII text files (Notepad++)
 
 - Install [Notepad++](https://notepad-plus-plus.org/) which supports encodings that can read Extended ASCII characters.
 - Open the text file with Notepad++.
