@@ -4,11 +4,11 @@ As mentioned earlier, the true original source code is in [David
 H. Ahl's Basic Computer Games Microcomputer
 Edition](https://archive.org/details/basic-computer-games-microcomputer-edition_202207).
 
- - Direct link to starting page of [Super Star Trek](https://archive.org/details/basic-computer-games-microcomputer-edition_202207/page/157/mode/2up)
+ - Direct link to starting page of [Super Star Trek](https://archive.org/details/basic-computer-games-microcomputer-edition_202207/page/157/mode/2up).
 
  - [PDF Text
     version](https://dn720001.ca.archive.org/0/items/basic-computer-games-microcomputer-edition_202207/Basic_Computer_Games_Microcomputer_Edition_text.pdf)
-    where you can copy/paste original source
+    where you can copy/paste original source.
     - Warning: VERY slow download!
 
 ---
@@ -17,7 +17,7 @@ BASIC ".BAS" files.
 
 ## Viewing the Extended ASCII text files
 
-- Install Notepad++ which supports encodings that can read Extended ASCII characters
+- Install Notepad++ which supports encodings that can read Extended ASCII characters.
 - Open the text file with Notepad++.
 - Change your encoding:
 Encoding | Character sets | Western European | OEM-US
