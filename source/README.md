@@ -21,8 +21,8 @@ BASIC ".BAS" files.
 - Open the text file with Notepad++.
 - Change your encoding:
 Encoding | Character sets | Western European | OEM-US
-- You can verify using test file 256.txt
-  - Test file courtesy of [Dernyn's 256 Font project](https://github.com/dernyn/256)
+- You can verify using test file 256.txt.
+  - Test file courtesy of [Dernyn's 256 Font project](https://github.com/dernyn/256).
 
 ## Examples
 
