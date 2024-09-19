@@ -2,8 +2,7 @@
 
 As mentioned earlier, the true original source code is in [David
 H. Ahl's Basic Computer Games Microcomputer
-Edition](https://archive.org/details/basic-computer-games-microcomputer-\
-edition_202207).
+Edition](https://archive.org/details/basic-computer-games-microcomputer-edition_202207).
 
 My modified game source code in this directory is an export from the
 BASIC ".BAS" files.
