@@ -54,4 +54,4 @@ startrek.bat
 
 
 ## Source Code
-You can view the original source material and my derivative work source code [here](https://github.com/jacklh9/StarTrek_BASIC/tree/master/source)
+You can view the original source material and my derivative work source code [here](https://github.com/jacklh9/StarTrek_BASIC/tree/master/source).
